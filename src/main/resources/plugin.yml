@@ -1,0 +1,16 @@
+# Plugin descriptor: declares the main class, command alias, API baseline, and admin permission.
+name: MATARIFParkour
+version: 1.0.0
+main: com.matarif.parkour.MatarifParkour
+api-version: '1.21'
+author: MATARIF
+description: A checkpoint-based parkour timer and leaderboard plugin.
+commands:
+  parkour:
+    description: Set up courses and play parkour.
+    aliases: [pk]
+    usage: /parkour <create|setstart|setfinish|addcheckpoint|setfaily|leaderboard>
+permissions:
+  matarifparkour.admin:
+    description: Allows players to create and configure parkour courses.
+    default: op

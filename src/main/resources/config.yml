@@ -1,0 +1,65 @@
+# Runtime settings and player-facing feedback. Sound names must be valid Bukkit Sound enum constants.
+prefix: "&8[&cMATARIF Parkour&8] &7"
+settings:
+  default-fail-y: 60.0
+  actionbar-period-ticks: 2
+  particle-period-ticks: 10
+  particle-amount: 4
+  particles-enabled: true
+  feedback-cooldown-ms: 900
+  recovery-notice-cooldown-ms: 1500
+  start-trigger-cooldown-ms: 1200
+  titles-enabled: true
+  title-fade-in: 5
+  title-stay: 25
+  title-fade-out: 8
+messages:
+  no-permission: "&cYou don't have permission to do that."
+  player-only: "&cThis command can only be used in-game."
+  usage: "&cUsage: /parkour <create|setstart|setfinish|addcheckpoint|setfaily|leaderboard>"
+  unknown-subcommand: "&cUnknown subcommand. Use /parkour for help."
+  course-created: "&aCourse '{course}' created. Stand on each pad and run its setup command."
+  course-exists: "&cCourse '{course}' already exists."
+  course-not-found: "&cCourse '{course}' doesn't exist."
+  start-set: "&aStart pad saved for '{course}'."
+  finish-set: "&aFinish pad saved for '{course}'."
+  checkpoint-added: "&aCheckpoint {number} saved for '{course}'."
+  invalid-checkpoint: "&cThe next checkpoint number must be {expected}."
+  fail-y-set: "&aFailure Y-level set to {y} for '{course}'."
+  course-incomplete: "&cThis course needs a start and finish pad before it can be played."
+  checkpoints-required: "&cTouch every checkpoint before finishing the course."
+  run-started: "&aRun started: &f{course}"
+  checkpoint-reached: "&bCheckpoint {number} reached!"
+  recovery: "&7Returning to your last checkpoint. Your timer is still running."
+  run-invalidated: "&cRun invalidated: {reason}"
+  run-finished: "&aFinished {course} in &f{time}&a."
+  new-record: "&6&lPERSONAL BEST! &e{time}"
+  old-record: "&7Your best time is still {time}."
+  no-records: "&7No completed runs have been recorded for '{course}' yet."
+  leaderboard-title: "&6&l{course} &7- Top 3"
+  leaderboard-line: "&e#{rank} &f{player} &7- &b{time}"
+  invalid-number: "&cEnter a valid number."
+  command-error: "&cThat command couldn't be completed. Check the course name and arguments."
+  help: "&e/parkour create <name> &7- Create a course
+&e/parkour setstart <name> &7- Set the start pad
+&e/parkour setfinish <name> &7- Set the finish pad
+&e/parkour addcheckpoint <name> <number> &7- Add a checkpoint
+&e/parkour setfaily <name> <y> &7- Set the fail height
+&e/parkour leaderboard <name> &7- Show the top three"
+titles:
+  start: { title: "&aGO!", subtitle: "&f{course}" }
+  checkpoint: { title: "&bCheckpoint {number}", subtitle: "&7Keep going!" }
+  finish: { title: "&6Course complete!", subtitle: "&f{time}" }
+  record: { title: "&eNew personal best!", subtitle: "&f{time}" }
+  invalid: { title: "&cRun invalidated", subtitle: "&7{reason}" }
+sounds:
+  command-success: { enabled: true, type: "ENTITY_EXPERIENCE_ORB_PICKUP", volume: 0.8, pitch: 1.2 }
+  command-error: { enabled: true, type: "ENTITY_VILLAGER_NO", volume: 0.8, pitch: 0.9 }
+  start: { enabled: true, type: "BLOCK_NOTE_BLOCK_PLING", volume: 0.8, pitch: 1.5 }
+  checkpoint: { enabled: true, type: "ENTITY_EXPERIENCE_ORB_PICKUP", volume: 0.8, pitch: 1.2 }
+  recovery: { enabled: true, type: "BLOCK_AMETHYST_BLOCK_CHIME", volume: 0.6, pitch: 0.7 }
+  finish: { enabled: true, type: "UI_TOAST_CHALLENGE_COMPLETE", volume: 0.9, pitch: 1.0 }
+  record: { enabled: true, type: "ENTITY_PLAYER_LEVELUP", volume: 0.8, pitch: 1.2 }
+  invalid: { enabled: true, type: "ENTITY_VILLAGER_NO", volume: 0.8, pitch: 0.8 }
+particles:
+  type: "END_ROD"
